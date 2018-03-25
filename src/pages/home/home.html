@@ -1,14 +1,25 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="login-content" padding>
+  <div text-center><img alt="logo" class="logo" src="../../assets/icon/watado.png"></div>
+<ion-row class="top-row">
+    <ion-col>
+      <h1 class="watado-logo"></h1>
+      <h3 class="watado-describe">Discover what Lagos has in store for you </h3>
+      </ion-col>
+</ion-row>
+<ion-row class="bottom-row">
+  
+    <button ion-button  color="fb" class="button button-full button-positive"
+    (click)="loginWithFacebook()" 
+    icon-start>
+        <ion-icon name="logo-facebook"></ion-icon>
+        Login With Facebook
+      </button>
+      <button ion-button  color="danger" class="button button-full button-assertive" (click)="loginWithGmail()" icon-start>
+        <ion-icon name="logo-googleplus"></ion-icon>  
+        Login With Google
+      </button>
+  
+</ion-row>
+
 </ion-content>

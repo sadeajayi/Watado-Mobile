@@ -1,3 +1,40 @@
 page-home {
-
-}
+    
+    
+        .login-content{
+            background: linear-gradient(to bottom, rgba(20, 11, 8, 0.24) 0%,rgba(243, 166, 74, 0.76) 100%), url(../../assets/imgs/beach.png) center;
+            //radial-gradient(ellipse at center, rgb(249, 172, 7) 0%,rgba(248,144,5,0.88) 50%,rgba(247,121,3,0.98) 98%,rgb(255, 124, 2) 100%);
+            //linear-gradient(#ff920a73, #f7a32e4d), url(../../assets/imgs/beach.png) center;
+            //linear-gradient(#ff920a73, #f7a32e4d), url(../../assets/imgs/beach.png) center;
+            background-size: cover;
+        }
+        .watado-logo{
+            color: #2196f3;
+            //#0f70bc
+            font-size: 300%;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 60px;
+        }
+    
+        .logo{
+            width: 200px;
+            margin-top: 60px;
+        }
+        .watado-describe{
+            font-size: 180%;
+            font-weight:400;
+            color: white;
+            text-align: center;
+        }
+    
+        .top-row{
+            height: 30%;
+        }
+    
+        .bottom-row{
+            height: 20%;
+        }
+    
+    }
+    

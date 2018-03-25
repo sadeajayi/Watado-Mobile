@@ -1,0 +1,58 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title text-align="center">Watado</ion-title>
+    <button ion-button show menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<!--<ion-searchbar id="input" [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Search for a place"></ion-searchbar>
+  <ion-list [hidden]="autocompleteItems.length == 0">
+    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+      {{ item.description }}
+    </ion-item>
+  </ion-list> -->
+  <div [formGroup]="myGroup">  
+    <input id="input"  #search placeholder="search for places in Lagos" type="text" class="form-control card-panel hoverable"formControlName="searchControl">
+  </div>
+  <ion-fab right bottom>
+    <button ion-fab color="light" [disabled]="allowPinDrop" (click)="locationPrompt()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+  <div #map id="map">
+    <agm-map
+      [latitude]="lat"
+      [longitude]="lng" 
+      [zoom]="zoom"
+      [disableDefaultUI]= "true"
+      [scrollwheel]="true"
+      [zoomControl]="false"
+      [usePanning]="true"
+    >    
+   <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m"> 
+      <agm-marker 
+      *ngFor="let m of markers"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [markerDraggable]="m.draggable"
+      (dragEnd)="markerDragEnd(m, $event)"
+      >   
+      </agm-marker>
+      <agm-circle *ngFor="let data of markers"
+      [latitude]="data.lat"
+      [longitude]="data.lng"
+      [editable]="false"
+      [radius]="radius"
+      >
+      </agm-circle>
+     </agm-marker-cluster>
+    </agm-map> 
+  </div>
+
+</ion-content>

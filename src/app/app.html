@@ -1,1 +1,27 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu class="map-menu" [content]="content" >
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Profile</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content *ngIf="auth.userData"> 
+        <ion-item>
+            <ion-avatar>
+                <ion-title>Photo</ion-title>
+                <img [src]="auth.userData.profilePic">  
+            </ion-avatar>
+        </ion-item> 
+        <ion-list>
+            <ion-title>Name: {{auth.userData.name}}</ion-title>
+            <ion-title>Email: {{auth.userData.email}}</ion-title>      
+        </ion-list>   
+        <ion-list>               
+        <button ion-item (click)="logout($event)">
+            Logout
+        </button> 
+      </ion-list>
+    </ion-content>
+</ion-menu> 
+
+<ion-nav [root]="rootPage" #content ></ion-nav>
